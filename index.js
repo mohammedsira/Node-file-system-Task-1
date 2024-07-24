@@ -14,7 +14,10 @@ if (!fs.existsSync(folderPath)) {
     console.log("Creating public folder");
     fs.mkdirSync(folderPath);
 }
-
+app.get("/", (req, res) => {
+    res.send("hello world")
+});
+ 
 // Endpoint to create a text file with the current timestamp
 app.post("/create-file", (req, res) => {
     const timestamp = new Date();
